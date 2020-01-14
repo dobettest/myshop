@@ -1,0 +1,67 @@
+<view class="goods_list">
+    <SearchInput></SearchInput>
+    <!-- 监听子组件事件-->
+    <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+    <view class="first_tab">
+    <navigator class="goods_item">
+    <!--左边商品图片容器-->
+        <view class="goods_img_wrap">
+        <image mode="widthFix" src="https://imgservice1.suning.cn/uimg1/b2c/image/mBjPBRoZUaTa5t1OzGSF2Q.jpg_400w_400h_4e"></image>
+        </view>
+        <!--右侧商品信息容器-->
+         <view class="goods_info_wrap">
+         <view class="goods_name">海信(Hisense)H65E3A 65英寸 4K超高清 HDR 金属背板 人工智能液晶平板电视机 丰富影视教育资源</view>
+         <view class="goods_price">￥2799.0</view>
+         </view>
+    </navigator>
+    <navigator class="goods_item">
+    <!--左边商品图片容器-->
+        <view class="goods_img_wrap">
+        <image mode="widthFix" src="https://imgservice1.suning.cn/uimg1/b2c/image/mBjPBRoZUaTa5t1OzGSF2Q.jpg_400w_400h_4e"></image>
+        </view>
+        <!--右侧商品信息容器-->
+         <view class="goods_info_wrap">
+         <view class="goods_name">海信(Hisense)H65E3A 65英寸 4K超高清 HDR 金属背板 人工智能液晶平板电视机 丰富影视教育资源</view>
+         <view class="goods_price">￥2799.0</view>
+         </view>
+    </navigator>
+    <navigator class="goods_item">
+    <!--左边商品图片容器-->
+        <view class="goods_img_wrap">
+        <image mode="widthFix" src="https://imgservice1.suning.cn/uimg1/b2c/image/mBjPBRoZUaTa5t1OzGSF2Q.jpg_400w_400h_4e"></image>
+        </view>
+        <!--右侧商品信息容器-->
+         <view class="goods_info_wrap">
+         <view class="goods_name">海信(Hisense)H65E3A 65英寸 4K超高清 HDR 金属背板 人工智能液晶平板电视机 丰富影视教育资源</view>
+         <view class="goods_price">￥2799.0</view>
+         </view>
+    </navigator>
+    </view>
+    </block>
+        <block wx:if="{{tabs[1].isActive}}">
+    <view class="first_tab">
+    <navigator class="goods_item">
+    <!--左边商品图片容器-->
+        <view class="goods_img_wrap">
+            <image mode="widthFix" src="https://imgservice4.suning.cn/uimg1/b2c/atmosphere/0s11TqNGxU5rB6q4djl5Ag.jpg_400w_400h_4e"></image>
+        </view>
+        <!--右侧商品信息容器-->
+         <view class="goods_info_wrap"></view>
+    </navigator>
+    </view>
+    </block>
+        <block wx:if="{{tabs[2].isActive}}">
+    <view class="first_tab">
+    <navigator class="goods_item">
+    <!--左边商品图片容器-->
+        <view class="goods_img_wrap">
+            <image mode="widthFix" src="https://imgservice1.suning.cn/uimg1/b2c/image/mBjPBRoZUaTa5t1OzGSF2Q.jpg_400w_400h_4e"></image>
+        </view>
+        <!--右侧商品信息容器-->
+         <view class="goods_info_wrap"></view>
+    </navigator>
+    </view>
+    </block>
+    </Tabs>
+</view>
