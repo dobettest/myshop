@@ -21,7 +21,7 @@
 	},
 	"appid": "wxc0e6e052fd089f8c",
 	"projectname": "%E6%9E%81%E5%AE%A2%E5%95%86%E5%9F%8E",
-	"libVersion": "2.8.1",
+	"libVersion": "2.10.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -48,16 +48,24 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
+					"id": 0,
+					"name": "支付",
+					"pathName": "pages/pay/index",
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": 1,
-					"name": "商品列表",
-					"pathName": "pages/goods_list/index",
-					"query": "cid=5",
+					"name": "购物车",
+					"pathName": "pages/cart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/goods_detail/index",
+					"pathName": "pages/goods_detail/index",
+					"query": "goods_id=5",
 					"scene": null
 				}
 			]

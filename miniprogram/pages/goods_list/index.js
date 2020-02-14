@@ -1,3 +1,4 @@
+import { request } from "../../request/index.js";
 // pages/goods_list/index.js
 Page({
 
@@ -21,17 +22,61 @@ Page({
         value:'价格',
         isActive:false
       }
-    ]
+    ],
+    goodsList:''
 
 
   },
+  queryParams:{
+    query:'',
+    pageSize:10,
+    pageNum:1,
+    cid:''
+  },
+  totalPages:1,
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     console.log(options)
+    this.queryParams.cid=options.cid
+    this.getGoodsList();
 
+  },
+  onReachBottom(){
+    if(this.queryParams.pageNum>=this.totalPages)
+    {
+      wx.showToast({
+        title: '没有下一页数据'});
+    }
+    else{
+      //console.log("%c"+"还有下一页数据","color:red")
+      this.queryParams.pageNum++;
+      this.getGoodsList();
+    }
+    
+  },
+  // 下拉刷新事件
+ onPullDownRefresh()
+  {
+    // 1、重置数组
+    this.setData({
+      goodsList:[]
+    });
+    //2、重置页码
+    this.queryParams.pageNum=1;
+    //3、重新发起请求
+    this.getGoodsList()
+  },
+  async getGoodsList()
+  {
+    const res=await request({url:'/goods/search',data:this.queryParams})
+    const total=res.total;
+    this.totalPages=Math.ceil(total/this.queryParams.pageSize)
+    // 拼接数组
+    this.setData({goodsList:[...this.data.goodsList,...res.goods]})
+    wx.stopPullDownRefresh()
   },
   //从子组件获取的子组件回调函数
   handleTabsItemChange(e){
